@@ -6,12 +6,12 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        // it should rel path
-        features="C:\\Users\\supriya.soni\\Documents\\Study material\\Testing\\Project_Demo\\automation_testing_demoApp\\src\\test\\java\\com\\demo\\features\\Login.feature",
+        features="src/test/java/com/demo/features/Checkout.feature",
         glue={"com/demo/stepDefinitions"},
         plugin = {"pretty", "html:cucumber-report/html-report",
                 "junit:cucumber-report/junit-report.xml",
                 "json:cucumber-report/json-report.json"},
+        tags = {"~@test", "~@bug"},
         monochrome = true,
         strict = true,
         dryRun = false

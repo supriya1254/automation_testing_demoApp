@@ -9,4 +9,3 @@ Feature: Registered user is able login
       |John.satty1@gmail.com|Test1234|
     And  Click on Login button
 
-
