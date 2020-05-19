@@ -42,17 +42,6 @@ public class ShoppingCartPage {
         return  true;
     }
 
-    /*public Boolean VerifyCountAndPrice() {
-        int price = 500;
-        int count = 1;
-        //if(productPrice.equals(price) || productQuantity.equals(count))
-        if(productQuantity.equals(count))
-        {
-            return true;
-        }
-        return  false;
-    }*/
-
     public Boolean ClickOnCheckoutBtn() {
         clickOn(driver,checkoutBtn,20);
         return  true;
