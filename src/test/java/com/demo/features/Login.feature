@@ -1,5 +1,6 @@
 Feature: Registered user is able login
 
+  @Smoke
   Scenario: User Login
     When User on the home page
     Then Click on 'My Account' menu item on the top
