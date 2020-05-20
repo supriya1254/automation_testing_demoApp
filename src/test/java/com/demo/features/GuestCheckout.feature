@@ -1,6 +1,5 @@
 Feature: Checkout
 
-
     @test
     Scenario: Guest Checkout
       When User on the home page
@@ -10,7 +9,6 @@ Feature: Checkout
       When User on the home page
       Then user clicks on shopping cart popup on right side
       And user clicks on Checkout link
-      #When user is on 'Checkout' page
       When user should click on 'Guest Checkout' checkbox
       Then User should enter the 'Personal Details' for Billing
       |firstname|lastname|email|telephone|address|city|postcode|

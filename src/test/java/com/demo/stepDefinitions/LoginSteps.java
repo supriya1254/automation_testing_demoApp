@@ -6,7 +6,6 @@ import cucumber.api.java.en.Then;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-
 import java.util.List;
 
 import static org.junit.Assert.assertTrue;

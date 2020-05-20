@@ -1,14 +1,9 @@
 package com.demo.stepDefinitions;
 
 import com.demo.pages.CheckoutPage;
-import com.demo.pages.ShoppingCartPage;
-import cucumber.api.DataTable;
 import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-
-import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 
@@ -30,16 +25,6 @@ public class CheckoutSteps {
     public void user_clicks_on_Checkout_link() {
         assertTrue("checkout link", checkoutPage.CheckoutLink());
     }
-/*
-    @When("^user is on 'Checkout' page$")
-    public void user_is_on_Checkout_page() {
-        assertTrue("checkout link", checkoutPage.CheckoutLink());
-    }
-
-    @Then("^user will choose existing address$")
-    public void user_will_choose_existing_address() {
-
-    }*/
 
     @Then("^Click on 'Continue' Button$")
     public void click_on_Continue_Button() {

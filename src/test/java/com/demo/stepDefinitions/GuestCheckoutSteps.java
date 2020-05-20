@@ -1,6 +1,5 @@
 package com.demo.stepDefinitions;
 
-import com.demo.pages.CheckoutPage;
 import com.demo.pages.GuestCheckoutPage;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.And;

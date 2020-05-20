@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features="src/test/java/com/demo/features/GuestCheckout.feature",
+        features="src/test/java/com/demo/features/",
         glue={"com/demo/stepDefinitions"},
         plugin = {"pretty", "html:cucumber-report/html-report",
                 "junit:cucumber-report/junit-report.xml",
@@ -20,5 +20,3 @@ public class TestRunner
 {
 
 }
-
-// tagging for run all the features files
