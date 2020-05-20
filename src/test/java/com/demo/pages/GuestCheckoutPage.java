@@ -1,12 +1,16 @@
 package com.demo.pages;
 
 import com.demo.stepDefinitions.Hooks;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.List;
 
 
 public class GuestCheckoutPage {
@@ -30,10 +34,12 @@ public class GuestCheckoutPage {
     private WebElement city;
     @FindBy(how = How.CSS, using = "#input-payment-postcode")
     private WebElement postCode;
-    @FindBy(how = How.CSS, using = "#input-payment-country")
+    @FindBy(how = How.XPATH, using = "//select[@id='input-payment-country']")
     private WebElement country;
-    @FindBy(how = How.CSS, using = "#input-payment-zone")
+    @FindBy(how = How.XPATH, using = "//select[@id='input-payment-zone']")
     private WebElement region;
+    @FindBy(how = How.XPATH, using = "//input[@name='shipping_address']")
+    private WebElement billingCheckbox;
     @FindBy(how = How.CSS, using = "#button-guest")
     private WebElement billingGuestBtn;
     @FindBy(how = How.CSS, using = "#button-shipping-method")
@@ -59,8 +65,7 @@ public class GuestCheckoutPage {
 
     public Boolean personalDetailsForBilling(String fn,String ln, String em,
                                              String tno,String add,String cty,
-                                             String code,String coun,
-                                             String reg) {
+                                             String code) {
         sendKeys(driver,firstname,10,fn);
         sendKeys(driver,lastname,10,ln);
         sendKeys(driver,email,10,em);
@@ -68,11 +73,22 @@ public class GuestCheckoutPage {
         sendKeys(driver,address,10,add);
         sendKeys(driver,city,10,cty);
         sendKeys(driver,postCode,10,code);
-        sendKeys(driver,country,10,coun);
-        sendKeys(driver,region,10,reg);
         return  true;
     }
 
+    public Boolean selectCountryAndRegion() {
+        Select selectCountry = new Select(country);
+        selectCountry.selectByVisibleText("United Kingdom");
+        Select selectRegion = new Select(region);
+        selectRegion.selectByVisibleText("Caerphilly");
+        return  true;
+    }
+
+
+    public Boolean billingChkbox() {
+        clickOn(driver,billingCheckbox,20);
+        return  true;
+    }
 
     public Boolean billingGuestButton() {
         clickOn(driver,billingGuestBtn,20);

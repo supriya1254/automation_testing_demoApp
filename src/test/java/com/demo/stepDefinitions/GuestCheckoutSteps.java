@@ -38,18 +38,18 @@ public class GuestCheckoutSteps {
                 billdetails.get(1).get(3),
                 billdetails.get(1).get(4),
                 billdetails.get(1).get(5),
-                billdetails.get(1).get(6),
-                billdetails.get(1).get(7),
-                billdetails.get(1).get(8))
+                billdetails.get(1).get(6))
         );
+        assertTrue("billing details",guestCheckoutPage.selectCountryAndRegion());
     }
 
-    @Then("^Click on  'Continue' Button for billing process$")
+    @Then("^Click on checkbox and 'Continue' Button for billing process$")
     public void click_on_Continue_Button_for_billing_process()  {
+        assertTrue("select billing process checkbox",guestCheckoutPage.billingChkbox());
         assertTrue("Billing process continue",guestCheckoutPage.billingGuestButton());
     }
 
-     @And("^click on 'Flat Rate' radio button on Payment Method$")
+     @And("^click on 'Flat Rate' radio button on Delivery Method$")
     public void click_on_Flat_Rate_button()  {
          assertTrue("flat rate button",guestCheckoutPage.flatRateRadioButton());
     }
@@ -60,21 +60,11 @@ public class GuestCheckoutSteps {
 
     }
 
-    @And("^click on 'Cash On Delivery' radio button and policy checkbox$")
+    @And("^click on radio button and policy checkbox and 'Confirm Order' button$")
     public void click_on_Cash_On_Delivery_radio_button_and_policy_checkbox()  {
         assertTrue("cash on deliver radio button",guestCheckoutPage.cashOnDeliveryRadioButton());
         assertTrue("policy checkbox",guestCheckoutPage.codPolicyCheckbox());
-        //assertTrue("policy checkbox",guestCheckoutPage.());
         assertTrue("policy checkbox",guestCheckoutPage.confirmOrderButton());
     }
 
-    /*@And("^Click on  'Continue' Button for Payment Method$")
-    public void click_on_Continue_Button_for_Payment_Method()  {
-        assertTrue("payment method continue",guestCheckoutPage.());
-    }
-    @Then("^Click on  'Confirm Order' Button$")
-    public void click_on_Confirm_Order_Button()  {
-        assertTrue("Order confirmed button",guestCheckoutPage.confirmOrderButton());
-
-    }*/
 }

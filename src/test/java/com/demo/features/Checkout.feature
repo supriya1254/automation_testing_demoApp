@@ -16,21 +16,20 @@ Feature: Checkout
     And user will click on policy checkbox
     And Clicks on 'Continue' button
 
-
+    @test
     Scenario: Guest Checkout
       When User on the home page
       Then search and add the product to the cart
         |product|
-        |MacBook|
+        |HTC Touch HD|
       When User on the home page
       Then user clicks on shopping cart popup on right side
       And user clicks on Checkout link
       #When user is on 'Checkout' page
       When user should click on 'Guest Checkout' checkbox
-      And Click on Continue button
       And User should enter the 'Personal Details' for Billing
-      |firstname|lastname|email|telephone|address|city|postcode|country|region|
-      |Jerry    |Nick    |John.satty1@gmail.com|987654321|88, euro street|Riga|1039|Latvia|Alojas|
+      |firstname|lastname|email|telephone|address|city|postcode|
+      |Jerry    |Nick    |John.satty1@gmail.com|987654321|88, euro street|Riga|1039|
       And Click on  'Continue' Button for billing process
       And click on 'Flat Rate' radio button on Payment Method
       And Click on  'Continue' Button for Delivery Method
